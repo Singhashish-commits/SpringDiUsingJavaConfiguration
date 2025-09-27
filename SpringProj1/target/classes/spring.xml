@@ -1,0 +1,42 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+<!--    <bean id="Alien" class= "com.telusko.Alien" scope="prototype"></bean>-->
+    <bean id="Alien" class= "com.telusko.Alien"  autowire="byName">
+<!--        <constructor-arg value="29"/>-->
+<!--        <constructor-arg ref="laptop"/>-->
+
+<!--this work by the sequence if we change the sequence it will give error can be solved by mentioning the type-->
+
+<!--        <constructor-arg type="com.telusko.laptop" ref="laptop"/>-->
+<!--        <constructor-arg type="int" value="26"/> -->
+
+        <!-- work only when the types are differnt if two parameter have sam e type it will get confused -->
+
+<!--   <constructor-arg index="1" ref="laptop"/>-->
+<!--        <constructor-arg index="0" value="28"/>-->
+
+<!--        <constructor-arg name="age" value="20"/>-->
+<!--        <constructor-arg name="l" ref="laptop"/>-->
+
+
+        <!-- the property uses the setter to assign values -->
+                <property name="age" value="21"/>
+<!--                <property name="comp" ref="comp"/>-->
+
+<!--Was not able to access the l2 because the laptop was private in alien-->
+    </bean>
+
+    <bean id="Alien2" class= "com.telusko.Alien"/>
+<!--    <bean id="comp"  class="com.telusko.laptop"/>-->
+    <bean id="laptop2" class="com.telusko.laptop"/>
+    <bean id="comp"  class="com.telusko.Desktop"/>
+    <!--when we define the scope as prototype the new object is created everytime  we call the get bean method  in java -->
+
+
+</beans>
+
